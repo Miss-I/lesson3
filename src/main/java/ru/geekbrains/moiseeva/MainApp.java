@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class MainApp {
     public static void main(String[] args) {
-        /*StartGame();
+        StartGame();
         while (true) {
             System.out.println("Повторить игру снова? 1 - ДА, 2 - НЕТ");
             Scanner sc = new Scanner(System.in);
@@ -15,7 +15,7 @@ public class MainApp {
             } else if (againOrNot == 2) {
                 break;
             }
-        }*/
+        }
 
         String[] words = {"apple", "orange", "lemon", "banana", "apricot", "avocado", "broccoli", "carrot", "cherry", "garlic", "grape", "melon", "leak", "kiwi", "mango", "mushroom", "nut", "olive", "pea", "peanut", "pear", "pepper", "pineapple", "pumpkin", "potato"};
         Random rand = new Random();
@@ -23,11 +23,11 @@ public class MainApp {
         String userAnswer = AskUser();
         String str = "###############";
         char[] prepareAnswer = str.toCharArray();
-        while (true){
-            if(aiWord.equals(userAnswer)){
+        while (true) {
+            if (aiWord.equals(userAnswer)) {
                 System.out.println("Вы угадали!");
                 break;
-            }else if(!aiWord.equals(userAnswer)) {
+            } else if (!aiWord.equals(userAnswer)) {
                 if (aiWord.length() <= userAnswer.length()) {
                     for (int i = 0; i < aiWord.length(); i++) {
                         char fromAi = aiWord.charAt(i);
@@ -36,7 +36,7 @@ public class MainApp {
                             prepareAnswer[i] = fromUser;
                         }
                     }
-                }else if(aiWord.length()>userAnswer.length()){
+                } else if (aiWord.length() > userAnswer.length()) {
                     for (int i = 0; i < userAnswer.length(); i++) {
                         char fromAi = aiWord.charAt(i);
                         char fromUser = userAnswer.charAt(i);
@@ -44,16 +44,13 @@ public class MainApp {
                             prepareAnswer[i] = fromUser;
                         }
                     }
-            }
+                }
                 for (int i = 0; i < prepareAnswer.length; i++) {
                     System.out.print(prepareAnswer[i]);
                 }
                 userAnswer = AskUser();
             }
         }
-
-
-
 
 
     }
@@ -80,7 +77,8 @@ public class MainApp {
             }
         }
     }
-    public static String AskUser(){
+
+    public static String AskUser() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите ваш ответ");
         String answer = sc.nextLine();
